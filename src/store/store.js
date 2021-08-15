@@ -5,7 +5,7 @@ import axios from 'axios'
 Vue.use(Vuex)
 // axios.defaults.baseURL = 'http://todo-laravel.test/api'
 
-axios.defaults.baseURL = 'http://localhost/api'
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
 
 
 export const store = new Vuex.Store({
@@ -219,7 +219,6 @@ export const store = new Vuex.Store({
       const completed = context.state.todos
         .filter(todo => todo.completed)
         .map(todo => todo.id)
-
       axios.delete('/todosDeleteCompleted', {
         data: {
           todos: completed
